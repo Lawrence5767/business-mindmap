@@ -117,6 +117,115 @@
   }
   .zoom-btn:hover { background: rgba(51, 65, 85, 0.95); }
 
+  /* Business Plan Button */
+  .bp-btn {
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+  .bp-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  }
+
+  /* Slide-out Panel */
+  .bp-overlay {
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .bp-overlay.open { opacity: 1; pointer-events: auto; }
+
+  .bp-panel {
+    position: fixed; top: 0; right: -520px; bottom: 0; z-index: 301;
+    width: 500px; max-width: 90vw;
+    background: #1e293b;
+    border-left: 1px solid rgba(148, 163, 184, 0.15);
+    overflow-y: auto;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 32px rgba(0,0,0,0.4);
+  }
+  .bp-panel.open { right: 0; }
+
+  .bp-header {
+    position: sticky; top: 0;
+    background: rgba(30, 41, 59, 0.98);
+    backdrop-filter: blur(12px);
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .bp-header h2 { font-size: 17px; font-weight: 700; color: #f1f5f9; }
+  .bp-close {
+    width: 32px; height: 32px;
+    background: rgba(51, 65, 85, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .bp-close:hover { background: rgba(71, 85, 105, 0.8); color: #f1f5f9; }
+
+  .bp-content {
+    padding: 24px;
+  }
+  .bp-section {
+    margin-bottom: 28px;
+  }
+  .bp-section h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #60a5fa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+  }
+  .bp-section p, .bp-section li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #cbd5e1;
+  }
+  .bp-section ul {
+    padding-left: 18px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .bp-section li::marker { color: #64748b; }
+  .bp-tag {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.15);
+    color: #a5b4fc;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin: 2px 4px 2px 0;
+  }
+  .bp-highlight {
+    background: rgba(251, 191, 36, 0.1);
+    border-left: 3px solid #f59e0b;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #fbbf24;
+    line-height: 1.6;
+  }
+
   /* Dashed line label */
   .conn-label {
     font-size: 10px;
@@ -131,6 +240,128 @@
   <div>
     <h1>Proposed Business Structure</h1>
     <div class="subtitle">New Sdn Bhd — Family Business Setup</div>
+  </div>
+  <button class="bp-btn" onclick="openBP()">Business Plan</button>
+</div>
+
+<!-- Business Plan Overlay & Panel -->
+<div class="bp-overlay" id="bpOverlay" onclick="closeBP()"></div>
+<div class="bp-panel" id="bpPanel">
+  <div class="bp-header">
+    <h2>Business Plan</h2>
+    <button class="bp-close" onclick="closeBP()">&times;</button>
+  </div>
+  <div class="bp-content">
+
+    <div class="bp-section">
+      <h3>Business Overview</h3>
+      <p>Retail and online sales of <strong>motorcycle spare parts and accessories</strong>, operating from Dad's existing shop location (OYK Enterprise premises).</p>
+      <div class="bp-highlight">
+        Leveraging an established shop with existing foot traffic and supplier relationships to launch a new Sdn Bhd with both offline and online channels.
+      </div>
+    </div>
+
+    <div class="bp-section">
+      <h3>Products & Services</h3>
+      <ul>
+        <li><strong>Spare Parts</strong> — Engine parts, brake pads, chains, sprockets, filters, bearings, gaskets, clutch plates</li>
+        <li><strong>Accessories</strong> — Helmets, gloves, riding gear, phone mounts, LED lights, mirrors, exhaust systems</li>
+        <li><strong>Consumables</strong> — Engine oil, lubricants, brake fluid, coolant, cleaning products</li>
+        <li><strong>Custom/Performance Parts</strong> — Aftermarket upgrades, performance exhaust, racing parts</li>
+        <li><strong>Services (Future)</strong> — Basic installation, fitting services at the shop</li>
+      </ul>
+    </div>
+
+    <div class="bp-section">
+      <h3>Target Market</h3>
+      <ul>
+        <li><strong>Primary</strong> — Daily motorcycle riders & commuters needing replacement parts</li>
+        <li><strong>Secondary</strong> — Motorcycle enthusiasts & hobbyists looking for upgrades/accessories</li>
+        <li><strong>Tertiary</strong> — Small workshops/mechanics who buy in bulk</li>
+      </ul>
+    </div>
+
+    <div class="bp-section">
+      <h3>Offline Strategy (PIC: LPK)</h3>
+      <ul>
+        <li>Operate from Dad's existing shop — reduces rental overhead</li>
+        <li>Walk-in customers, display racks for popular items</li>
+        <li>Build relationships with nearby workshops for B2B supply</li>
+        <li>Maintain fast-moving inventory based on local demand</li>
+        <li>Counter service for quick purchases</li>
+      </ul>
+    </div>
+
+    <div class="bp-section">
+      <h3>Online Strategy (PIC: Jim)</h3>
+      <ul>
+        <li><strong>Shopee / Lazada</strong> — List products on major MY marketplaces</li>
+        <li><strong>Own Website</strong> — Shopify or WooCommerce store for direct sales</li>
+        <li><strong>Social Media</strong> — Facebook, TikTok, Instagram for product showcases & promotions</li>
+        <li><strong>WhatsApp Business</strong> — Direct customer enquiries & order taking</li>
+        <li>Nationwide delivery via courier partners (J&T, PosLaju, etc.)</li>
+      </ul>
+    </div>
+
+    <div class="bp-section">
+      <h3>Revenue Streams</h3>
+      <ul>
+        <li>Retail margin on spare parts (typically 30-50% markup)</li>
+        <li>Higher margin on accessories & gear (40-60% markup)</li>
+        <li>Volume discounts from suppliers → bulk purchase advantage</li>
+        <li>Online sales with nationwide reach (higher volume, competitive pricing)</li>
+        <li>B2B supply to workshops (lower margin, higher volume)</li>
+      </ul>
+    </div>
+
+    <div class="bp-section">
+      <h3>Competitive Advantages</h3>
+      <ul>
+        <li>Existing shop location with established foot traffic (zero setup cost)</li>
+        <li>Dad's existing supplier network & industry knowledge</li>
+        <li>Dual-channel (offline + online) captures both local and nationwide customers</li>
+        <li>Lawrence's digital marketing expertise (NextGen) for online growth</li>
+        <li>Low overhead — family shop, lean team</li>
+      </ul>
+    </div>
+
+    <div class="bp-section">
+      <h3>Startup Costs (Estimated)</h3>
+      <ul>
+        <li><strong>SSM Registration (Sdn Bhd)</strong> — RM1,000 - RM2,500</li>
+        <li><strong>Initial Inventory</strong> — RM15,000 - RM30,000</li>
+        <li><strong>Shop Renovation/Display</strong> — RM3,000 - RM8,000</li>
+        <li><strong>E-commerce Setup</strong> — RM1,000 - RM3,000</li>
+        <li><strong>Marketing (first 3 months)</strong> — RM2,000 - RM5,000</li>
+        <li><strong>Working Capital</strong> — RM5,000 - RM10,000</li>
+      </ul>
+      <div class="bp-highlight">
+        Estimated total: RM27,000 - RM58,500<br>
+        Split across 3 investors based on agreed shareholding ratio.
+      </div>
+    </div>
+
+    <div class="bp-section">
+      <h3>Key Milestones</h3>
+      <ul>
+        <li><strong>Month 1</strong> — Register Sdn Bhd, set up accounts, agree on shareholding</li>
+        <li><strong>Month 1-2</strong> — Source suppliers, purchase initial inventory, set up shop display</li>
+        <li><strong>Month 2-3</strong> — Launch Shopee/Lazada listings, set up website & social media</li>
+        <li><strong>Month 3-6</strong> — Grow online presence, build workshop B2B relationships</li>
+        <li><strong>Month 6-12</strong> — Evaluate performance, expand product range, optimize channels</li>
+      </ul>
+    </div>
+
+    <div class="bp-section">
+      <h3>Roles Summary</h3>
+      <ul>
+        <li><strong>Dad</strong> — Investor + Shop space provider + Supplier relationships advisor</li>
+        <li><strong>Jim</strong> — Director + Online PIC (e-commerce, marketplace listings)</li>
+        <li><strong>Lawrence</strong> — Director + Digital marketing (via NextGen) + Business strategy</li>
+        <li><strong>LPK</strong> — Offline PIC (daily shop operations, inventory, walk-in customers)</li>
+      </ul>
+    </div>
+
   </div>
 </div>
 
@@ -395,6 +626,17 @@
     }
   }, { passive: false });
   wrap.addEventListener('touchend', () => isPanning = false);
+
+  // === Business Plan Panel ===
+  function openBP() {
+    document.getElementById('bpOverlay').classList.add('open');
+    document.getElementById('bpPanel').classList.add('open');
+  }
+  function closeBP() {
+    document.getElementById('bpOverlay').classList.remove('open');
+    document.getElementById('bpPanel').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBP(); });
 </script>
 
 </body>
