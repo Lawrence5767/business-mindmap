@@ -179,52 +179,100 @@
   }
   .bp-close:hover { background: rgba(71, 85, 105, 0.8); color: #f1f5f9; }
 
-  .bp-content {
-    padding: 24px;
+  .bp-content { padding: 16px; }
+
+  /* Hero card */
+  .bp-hero {
+    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.08));
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    text-align: center;
   }
-  .bp-section {
-    margin-bottom: 28px;
+  .bp-hero-icon { font-size: 36px; margin-bottom: 8px; }
+  .bp-hero h3 { font-size: 16px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+  .bp-hero p { font-size: 12px; color: #94a3b8; line-height: 1.5; }
+
+  /* Accordion */
+  .acc { margin-bottom: 8px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(148,163,184,0.1); }
+  .acc-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px;
+    background: rgba(30, 41, 59, 0.6);
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
   }
-  .bp-section h3 {
-    font-size: 13px;
-    font-weight: 700;
-    color: #60a5fa;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(96, 165, 250, 0.15);
+  .acc-head:hover { background: rgba(51, 65, 85, 0.5); }
+  .acc-icon { font-size: 20px; flex-shrink: 0; width: 28px; text-align: center; }
+  .acc-title { font-size: 14px; font-weight: 600; color: #f1f5f9; flex: 1; }
+  .acc-badge {
+    font-size: 10px; font-weight: 700; padding: 2px 8px;
+    border-radius: 6px; color: #fff; flex-shrink: 0;
   }
-  .bp-section p, .bp-section li {
-    font-size: 13px;
-    line-height: 1.7;
-    color: #cbd5e1;
+  .acc-arrow {
+    font-size: 12px; color: #64748b;
+    transition: transform 0.3s;
+    flex-shrink: 0;
   }
-  .bp-section ul {
-    padding-left: 18px;
-    display: flex; flex-direction: column; gap: 6px;
+  .acc.open .acc-arrow { transform: rotate(180deg); }
+  .acc-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .bp-section li::marker { color: #64748b; }
+  .acc.open .acc-body { max-height: 600px; }
+  .acc-inner { padding: 4px 16px 16px 56px; }
+  .acc-inner p { font-size: 12px; color: #cbd5e1; line-height: 1.6; margin-bottom: 6px; }
+
+  /* Tags inside accordion */
+  .bp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
   .bp-tag {
     display: inline-block;
-    background: rgba(99, 102, 241, 0.15);
-    color: #a5b4fc;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 6px;
-    margin: 2px 4px 2px 0;
+    font-size: 11px; font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    border: 1px solid rgba(148,163,184,0.1);
   }
-  .bp-highlight {
-    background: rgba(251, 191, 36, 0.1);
-    border-left: 3px solid #f59e0b;
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    margin: 12px 0;
-    font-size: 13px;
-    color: #fbbf24;
-    line-height: 1.6;
+
+  /* Cost bar chart */
+  .cost-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .cost-label { font-size: 11px; color: #94a3b8; width: 100px; flex-shrink: 0; text-align: right; }
+  .cost-bar-wrap { flex: 1; height: 20px; background: rgba(30,41,59,0.8); border-radius: 6px; overflow: hidden; position: relative; }
+  .cost-bar { height: 100%; border-radius: 6px; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); width: 0; }
+  .cost-val { font-size: 10px; color: #f1f5f9; position: absolute; right: 6px; top: 3px; font-weight: 600; }
+  .cost-total {
+    margin-top: 12px; padding: 10px 14px;
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251,191,36,0.2);
+    border-radius: 10px;
+    text-align: center;
   }
+  .cost-total span { font-size: 18px; font-weight: 700; color: #fbbf24; }
+  .cost-total p { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+
+  /* Timeline */
+  .tl { position: relative; padding-left: 20px; }
+  .tl::before { content:''; position: absolute; left: 6px; top: 4px; bottom: 4px; width: 2px; background: rgba(99,102,241,0.3); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 14px; }
+  .tl-dot { position: absolute; left: -18px; top: 3px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid; }
+  .tl-time { font-size: 11px; font-weight: 700; margin-bottom: 2px; }
+  .tl-desc { font-size: 12px; color: #94a3b8; line-height: 1.4; }
+
+  /* Role cards */
+  .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .role-card {
+    padding: 12px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148,163,184,0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .role-emoji { font-size: 24px; margin-bottom: 4px; }
+  .role-name { font-size: 13px; font-weight: 700; color: #f1f5f9; }
+  .role-desc { font-size: 10px; color: #94a3b8; margin-top: 2px; line-height: 1.4; }
 
   /* Dashed line label */
   .conn-label {
@@ -241,125 +289,285 @@
     <h1>Proposed Business Structure</h1>
     <div class="subtitle">New Sdn Bhd — Family Business Setup</div>
   </div>
-  <button class="bp-btn" onclick="openBP()">Business Plan</button>
+  <div style="display:flex;gap:8px">
+    <button class="bp-btn" onclick="openPanel('bp')">Business Plan</button>
+    <button class="bp-btn" style="background:linear-gradient(135deg,#f59e0b,#ef4444)" onclick="openPanel('road')">Road to 50K</button>
+  </div>
 </div>
 
-<!-- Business Plan Overlay & Panel -->
-<div class="bp-overlay" id="bpOverlay" onclick="closeBP()"></div>
+<!-- Shared Overlay -->
+<div class="bp-overlay" id="bpOverlay" onclick="closePanel()"></div>
+
+<!-- ========== BUSINESS PLAN PANEL ========== -->
 <div class="bp-panel" id="bpPanel">
   <div class="bp-header">
     <h2>Business Plan</h2>
-    <button class="bp-close" onclick="closeBP()">&times;</button>
+    <button class="bp-close" onclick="closePanel()">&times;</button>
   </div>
   <div class="bp-content">
 
-    <div class="bp-section">
-      <h3>Business Overview</h3>
-      <p>Retail and online sales of <strong>motorcycle spare parts and accessories</strong>, operating from Dad's existing shop location (OYK Enterprise premises).</p>
-      <div class="bp-highlight">
-        Leveraging an established shop with existing foot traffic and supplier relationships to launch a new Sdn Bhd with both offline and online channels.
+    <div class="bp-hero">
+      <div class="bp-hero-icon">&#x1F3CD;</div>
+      <h3>Motorcycle Spare Parts & Accessories</h3>
+      <p>Offline retail + online e-commerce via new Sdn Bhd</p>
+    </div>
+
+    <!-- Products -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F6E0;</div>
+        <div class="acc-title">Products</div>
+        <span class="acc-badge" style="background:#3b82f6">5 categories</span>
+        <div class="acc-arrow">&#x25BC;</div>
       </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="bp-tags">
+          <span class="bp-tag">Spare Parts</span>
+          <span class="bp-tag">Accessories</span>
+          <span class="bp-tag">Consumables</span>
+          <span class="bp-tag">Performance Parts</span>
+          <span class="bp-tag">Installation Services</span>
+        </div>
+        <p style="margin-top:10px">Engine parts, brake pads, helmets, gloves, riding gear, engine oil, lubricants, aftermarket upgrades, and basic fitting services.</p>
+      </div></div>
     </div>
 
-    <div class="bp-section">
-      <h3>Products & Services</h3>
-      <ul>
-        <li><strong>Spare Parts</strong> — Engine parts, brake pads, chains, sprockets, filters, bearings, gaskets, clutch plates</li>
-        <li><strong>Accessories</strong> — Helmets, gloves, riding gear, phone mounts, LED lights, mirrors, exhaust systems</li>
-        <li><strong>Consumables</strong> — Engine oil, lubricants, brake fluid, coolant, cleaning products</li>
-        <li><strong>Custom/Performance Parts</strong> — Aftermarket upgrades, performance exhaust, racing parts</li>
-        <li><strong>Services (Future)</strong> — Basic installation, fitting services at the shop</li>
-      </ul>
-    </div>
-
-    <div class="bp-section">
-      <h3>Target Market</h3>
-      <ul>
-        <li><strong>Primary</strong> — Daily motorcycle riders & commuters needing replacement parts</li>
-        <li><strong>Secondary</strong> — Motorcycle enthusiasts & hobbyists looking for upgrades/accessories</li>
-        <li><strong>Tertiary</strong> — Small workshops/mechanics who buy in bulk</li>
-      </ul>
-    </div>
-
-    <div class="bp-section">
-      <h3>Offline Strategy (PIC: LPK)</h3>
-      <ul>
-        <li>Operate from Dad's existing shop — reduces rental overhead</li>
-        <li>Walk-in customers, display racks for popular items</li>
-        <li>Build relationships with nearby workshops for B2B supply</li>
-        <li>Maintain fast-moving inventory based on local demand</li>
-        <li>Counter service for quick purchases</li>
-      </ul>
-    </div>
-
-    <div class="bp-section">
-      <h3>Online Strategy (PIC: Jim)</h3>
-      <ul>
-        <li><strong>Shopee / Lazada</strong> — List products on major MY marketplaces</li>
-        <li><strong>Own Website</strong> — Shopify or WooCommerce store for direct sales</li>
-        <li><strong>Social Media</strong> — Facebook, TikTok, Instagram for product showcases & promotions</li>
-        <li><strong>WhatsApp Business</strong> — Direct customer enquiries & order taking</li>
-        <li>Nationwide delivery via courier partners (J&T, PosLaju, etc.)</li>
-      </ul>
-    </div>
-
-    <div class="bp-section">
-      <h3>Revenue Streams</h3>
-      <ul>
-        <li>Retail margin on spare parts (typically 30-50% markup)</li>
-        <li>Higher margin on accessories & gear (40-60% markup)</li>
-        <li>Volume discounts from suppliers → bulk purchase advantage</li>
-        <li>Online sales with nationwide reach (higher volume, competitive pricing)</li>
-        <li>B2B supply to workshops (lower margin, higher volume)</li>
-      </ul>
-    </div>
-
-    <div class="bp-section">
-      <h3>Competitive Advantages</h3>
-      <ul>
-        <li>Existing shop location with established foot traffic (zero setup cost)</li>
-        <li>Dad's existing supplier network & industry knowledge</li>
-        <li>Dual-channel (offline + online) captures both local and nationwide customers</li>
-        <li>Lawrence's digital marketing expertise (NextGen) for online growth</li>
-        <li>Low overhead — family shop, lean team</li>
-      </ul>
-    </div>
-
-    <div class="bp-section">
-      <h3>Startup Costs (Estimated)</h3>
-      <ul>
-        <li><strong>SSM Registration (Sdn Bhd)</strong> — RM1,000 - RM2,500</li>
-        <li><strong>Initial Inventory</strong> — RM15,000 - RM30,000</li>
-        <li><strong>Shop Renovation/Display</strong> — RM3,000 - RM8,000</li>
-        <li><strong>E-commerce Setup</strong> — RM1,000 - RM3,000</li>
-        <li><strong>Marketing (first 3 months)</strong> — RM2,000 - RM5,000</li>
-        <li><strong>Working Capital</strong> — RM5,000 - RM10,000</li>
-      </ul>
-      <div class="bp-highlight">
-        Estimated total: RM27,000 - RM58,500<br>
-        Split across 3 investors based on agreed shareholding ratio.
+    <!-- Target Market -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F3AF;</div>
+        <div class="acc-title">Target Market</div>
+        <span class="acc-badge" style="background:#8b5cf6">3 segments</span>
+        <div class="acc-arrow">&#x25BC;</div>
       </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">Daily riders</strong> — commuters needing replacement parts</p>
+        <p><strong style="color:#f1f5f9">Enthusiasts</strong> — hobbyists wanting upgrades & gear</p>
+        <p><strong style="color:#f1f5f9">Workshops</strong> — small mechanics buying in bulk (B2B)</p>
+      </div></div>
     </div>
 
-    <div class="bp-section">
-      <h3>Key Milestones</h3>
-      <ul>
-        <li><strong>Month 1</strong> — Register Sdn Bhd, set up accounts, agree on shareholding</li>
-        <li><strong>Month 1-2</strong> — Source suppliers, purchase initial inventory, set up shop display</li>
-        <li><strong>Month 2-3</strong> — Launch Shopee/Lazada listings, set up website & social media</li>
-        <li><strong>Month 3-6</strong> — Grow online presence, build workshop B2B relationships</li>
-        <li><strong>Month 6-12</strong> — Evaluate performance, expand product range, optimize channels</li>
-      </ul>
+    <!-- Offline Strategy -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F3EA;</div>
+        <div class="acc-title">Offline — LPK</div>
+        <span class="acc-badge" style="background:#10b981">Retail</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Operate from Dad's shop (low rent). Walk-in sales, display racks, counter service. Build B2B relationships with nearby workshops.</p>
+      </div></div>
     </div>
 
-    <div class="bp-section">
-      <h3>Roles Summary</h3>
-      <ul>
-        <li><strong>Dad</strong> — Investor + Shop space provider + Supplier relationships advisor</li>
-        <li><strong>Jim</strong> — Director + Online PIC (e-commerce, marketplace listings)</li>
-        <li><strong>Lawrence</strong> — Director + Digital marketing (via NextGen) + Business strategy</li>
-        <li><strong>LPK</strong> — Offline PIC (daily shop operations, inventory, walk-in customers)</li>
-      </ul>
+    <!-- Online Strategy -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4F1;</div>
+        <div class="acc-title">Online — Jim</div>
+        <span class="acc-badge" style="background:#6366f1">E-commerce</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="bp-tags">
+          <span class="bp-tag">Shopee</span>
+          <span class="bp-tag">Lazada</span>
+          <span class="bp-tag">Own Website</span>
+          <span class="bp-tag">WhatsApp Biz</span>
+          <span class="bp-tag">Social Media</span>
+        </div>
+        <p style="margin-top:10px">Nationwide delivery via J&T, PosLaju. Facebook, TikTok, Instagram for product showcases.</p>
+      </div></div>
+    </div>
+
+    <!-- Revenue -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4B0;</div>
+        <div class="acc-title">Revenue Streams</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#10b981">30-50%</strong> markup on spare parts</p>
+        <p><strong style="color:#10b981">40-60%</strong> markup on accessories & gear</p>
+        <p>+ Bulk supplier discounts, online nationwide reach, B2B workshop supply</p>
+      </div></div>
+    </div>
+
+    <!-- Startup Costs -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4CA;</div>
+        <div class="acc-title">Startup Costs</div>
+        <span class="acc-badge" style="background:#f59e0b;color:#000">RM27K-58K</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="cost-row"><div class="cost-label">SSM</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="8" style="background:#3b82f6"></div><div class="cost-val">RM2.5K</div></div></div>
+        <div class="cost-row"><div class="cost-label">Inventory</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="100" style="background:#f59e0b"></div><div class="cost-val">RM30K</div></div></div>
+        <div class="cost-row"><div class="cost-label">Renovation</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="27" style="background:#10b981"></div><div class="cost-val">RM8K</div></div></div>
+        <div class="cost-row"><div class="cost-label">E-commerce</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="10" style="background:#8b5cf6"></div><div class="cost-val">RM3K</div></div></div>
+        <div class="cost-row"><div class="cost-label">Marketing</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="17" style="background:#ef4444"></div><div class="cost-val">RM5K</div></div></div>
+        <div class="cost-row"><div class="cost-label">Working Cap</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="33" style="background:#06b6d4"></div><div class="cost-val">RM10K</div></div></div>
+        <div class="cost-total">
+          <span>RM27K — RM58.5K</span>
+          <p>Split across 3 investors</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4C5;</div>
+        <div class="acc-title">12-Month Milestones</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="tl">
+          <div class="tl-item"><div class="tl-dot" style="border-color:#3b82f6;background:#3b82f6"></div><div class="tl-time" style="color:#3b82f6">Month 1</div><div class="tl-desc">Register Sdn Bhd, agree shareholding</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#8b5cf6;background:#8b5cf6"></div><div class="tl-time" style="color:#8b5cf6">Month 1-2</div><div class="tl-desc">Source suppliers, stock up, set up shop</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#10b981;background:#10b981"></div><div class="tl-time" style="color:#10b981">Month 2-3</div><div class="tl-desc">Launch Shopee/Lazada, website & socials</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#f59e0b;background:#f59e0b"></div><div class="tl-time" style="color:#f59e0b">Month 3-6</div><div class="tl-desc">Grow online, build B2B workshop supply</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#ef4444;background:#ef4444"></div><div class="tl-time" style="color:#ef4444">Month 6-12</div><div class="tl-desc">Evaluate, expand range, optimize</div></div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Roles -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F465;</div>
+        <div class="acc-title">Team Roles</div>
+        <span class="acc-badge" style="background:#64748b">4 people</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="role-grid">
+          <div class="role-card"><div class="role-emoji">&#x1F468;&#x200D;&#x1F9B3;</div><div class="role-name">Dad</div><div class="role-desc">Investor + Shop space + Supplier network</div></div>
+          <div class="role-card"><div class="role-emoji">&#x1F4BB;</div><div class="role-name">Lawrence</div><div class="role-desc">Director + Marketing (NextGen)</div></div>
+          <div class="role-card"><div class="role-emoji">&#x1F6D2;</div><div class="role-name">Jim</div><div class="role-desc">Director + Online PIC</div></div>
+          <div class="role-card"><div class="role-emoji">&#x1F3EA;</div><div class="role-name">LPK</div><div class="role-desc">Offline PIC + Daily ops</div></div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== ROAD TO 50K PANEL ========== -->
+<div class="bp-panel" id="roadPanel">
+  <div class="bp-header">
+    <h2>Road to RM50K/month</h2>
+    <button class="bp-close" onclick="closePanel()">&times;</button>
+  </div>
+  <div class="bp-content">
+
+    <div class="bp-hero" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(239,68,68,0.08));border-color:rgba(245,158,11,0.25)">
+      <div class="bp-hero-icon">&#x1F680;</div>
+      <h3>RM50,000 Monthly Revenue</h3>
+      <p>Breakdown of how to hit RM50K/month across offline + online</p>
+    </div>
+
+    <!-- Revenue Split -->
+    <div class="acc open" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4B5;</div>
+        <div class="acc-title">Revenue Split Target</div>
+        <span class="acc-badge" style="background:#f59e0b;color:#000">RM50K</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="cost-row"><div class="cost-label">Offline</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="60" style="background:#10b981"></div><div class="cost-val">RM30K (60%)</div></div></div>
+        <div class="cost-row"><div class="cost-label">Online</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="40" style="background:#6366f1"></div><div class="cost-val">RM20K (40%)</div></div></div>
+        <div class="cost-total" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.2)">
+          <span style="color:#10b981">RM50,000/month</span>
+          <p>~RM1,667/day combined</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Offline Breakdown -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F3EA;</div>
+        <div class="acc-title">Offline: RM30K/month</div>
+        <span class="acc-badge" style="background:#10b981">~RM1K/day</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">Walk-in sales:</strong> 15-20 customers/day, avg RM30-50 each = RM600-800/day</p>
+        <p><strong style="color:#f1f5f9">B2B workshop:</strong> 3-5 regular workshops, RM100-200/order, 2-3x/week = RM200-400/day</p>
+        <p style="margin-top:8px;color:#10b981;font-weight:600">&#x2192; Keys: fast-moving stock, workshop relationships, loyalty pricing</p>
+      </div></div>
+    </div>
+
+    <!-- Online Breakdown -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4F1;</div>
+        <div class="acc-title">Online: RM20K/month</div>
+        <span class="acc-badge" style="background:#6366f1">~RM667/day</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">Shopee/Lazada:</strong> 8-12 orders/day, avg RM40-60 = RM400-500/day</p>
+        <p><strong style="color:#f1f5f9">WhatsApp/Direct:</strong> 3-5 orders/day, avg RM50-80 = RM200-300/day</p>
+        <p style="margin-top:8px;color:#6366f1;font-weight:600">&#x2192; Keys: product reviews, competitive pricing, fast shipping</p>
+      </div></div>
+    </div>
+
+    <!-- Monthly Scaling -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4C8;</div>
+        <div class="acc-title">Growth Phases</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="tl">
+          <div class="tl-item"><div class="tl-dot" style="border-color:#64748b;background:#64748b"></div><div class="tl-time" style="color:#64748b">Month 1-2: RM5-10K</div><div class="tl-desc">Set up shop, initial customers, test products</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#3b82f6;background:#3b82f6"></div><div class="tl-time" style="color:#3b82f6">Month 3-4: RM15-20K</div><div class="tl-desc">Online listings live, workshop B2B starting</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#8b5cf6;background:#8b5cf6"></div><div class="tl-time" style="color:#8b5cf6">Month 5-6: RM25-35K</div><div class="tl-desc">Repeat customers, reviews building, wider range</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#f59e0b;background:#f59e0b"></div><div class="tl-time" style="color:#f59e0b">Month 7-9: RM35-45K</div><div class="tl-desc">Strong online presence, 5+ workshop regulars</div></div>
+          <div class="tl-item"><div class="tl-dot" style="border-color:#10b981;background:#10b981"></div><div class="tl-time" style="color:#10b981">Month 10-12: RM50K+</div><div class="tl-desc">Full capacity — both channels firing</div></div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Profit Margin -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F911;</div>
+        <div class="acc-title">Profit Estimate</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="cost-row"><div class="cost-label">Revenue</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="100" style="background:#3b82f6"></div><div class="cost-val">RM50K</div></div></div>
+        <div class="cost-row"><div class="cost-label">COGS (~60%)</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="60" style="background:#ef4444"></div><div class="cost-val">-RM30K</div></div></div>
+        <div class="cost-row"><div class="cost-label">Expenses (~15%)</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="15" style="background:#f59e0b"></div><div class="cost-val">-RM7.5K</div></div></div>
+        <div class="cost-total" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.2)">
+          <span style="color:#10b981">~RM12.5K net profit</span>
+          <p>~25% net margin at RM50K revenue</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Quick Wins -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x26A1;</div>
+        <div class="acc-title">Quick Wins to Get There</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>&#x2705; Stock top 50 best-selling SKUs first</p>
+        <p>&#x2705; Run Shopee Flash Sales to get initial reviews</p>
+        <p>&#x2705; Offer workshop credit terms (net 14 days)</p>
+        <p>&#x2705; WhatsApp broadcast for new stock arrivals</p>
+        <p>&#x2705; TikTok "install" videos for accessories</p>
+        <p>&#x2705; Bundle deals (oil + filter + brake pad combos)</p>
+      </div></div>
     </div>
 
   </div>
@@ -627,16 +835,39 @@
   }, { passive: false });
   wrap.addEventListener('touchend', () => isPanning = false);
 
-  // === Business Plan Panel ===
-  function openBP() {
+  // === Panel Management ===
+  let activePanel = null;
+  function openPanel(id) {
+    closePanel();
+    const panel = id === 'bp' ? document.getElementById('bpPanel') : document.getElementById('roadPanel');
     document.getElementById('bpOverlay').classList.add('open');
-    document.getElementById('bpPanel').classList.add('open');
+    panel.classList.add('open');
+    activePanel = panel;
+    // Animate cost bars after panel opens
+    setTimeout(() => animateBars(panel), 400);
   }
-  function closeBP() {
+  function closePanel() {
     document.getElementById('bpOverlay').classList.remove('open');
-    document.getElementById('bpPanel').classList.remove('open');
+    document.querySelectorAll('.bp-panel').forEach(p => p.classList.remove('open'));
+    activePanel = null;
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBP(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+  // === Accordion ===
+  function toggleAcc(el) {
+    el.classList.toggle('open');
+    // Animate bars when opening
+    if (el.classList.contains('open')) animateBars(el);
+  }
+
+  // === Animate cost bars ===
+  function animateBars(container) {
+    container.querySelectorAll('.cost-bar').forEach(bar => {
+      const w = bar.dataset.w;
+      bar.style.width = '0%';
+      setTimeout(() => { bar.style.width = w + '%'; }, 50);
+    });
+  }
 </script>
 
 </body>
