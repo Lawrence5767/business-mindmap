@@ -292,6 +292,7 @@
   <div style="display:flex;gap:8px">
     <button class="bp-btn" onclick="openPanel('bp')">Business Plan</button>
     <button class="bp-btn" style="background:linear-gradient(135deg,#f59e0b,#ef4444)" onclick="openPanel('road')">Road to RM 50K Sales</button>
+    <button class="bp-btn" style="background:linear-gradient(135deg,#10b981,#06b6d4)" onclick="openPanel('market')">Market Data</button>
   </div>
 </div>
 
@@ -573,6 +574,149 @@
   </div>
 </div>
 
+<!-- ========== MARKET DATA PANEL ========== -->
+<div class="bp-panel" id="marketPanel">
+  <div class="bp-header">
+    <h2>Market Data</h2>
+    <button class="bp-close" onclick="closePanel()">&times;</button>
+  </div>
+  <div class="bp-content">
+
+    <div class="bp-hero" style="background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(6,182,212,0.08));border-color:rgba(16,185,129,0.25)">
+      <div class="bp-hero-icon">&#x1F4CA;</div>
+      <h3>Industry Margins & Sourcing</h3>
+      <p>Motorcycle spare parts retail — Malaysia/SEA market</p>
+    </div>
+
+    <!-- Margin by Category -->
+    <div class="acc open" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4B0;</div>
+        <div class="acc-title">Margins by Category</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="margin-bottom:10px;color:#94a3b8;font-size:11px">Typical gross margin range for Malaysian retail</p>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Stickers/Decals</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="85" style="background:#10b981"></div><div class="cost-val">70-85%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Phone Mounts/LED</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="80" style="background:#10b981"></div><div class="cost-val">60-80%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">China Helmets</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="75" style="background:#10b981"></div><div class="cost-val">60-75%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Aftermarket Parts</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="60" style="background:#3b82f6"></div><div class="cost-val">40-60%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Brake Pads/Chains</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="50" style="background:#3b82f6"></div><div class="cost-val">35-50%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Chain Lube/Sprays</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="55" style="background:#3b82f6"></div><div class="cost-val">40-55%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Branded Helmets</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="45" style="background:#f59e0b"></div><div class="cost-val">30-45%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Branded Oil</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="40" style="background:#f59e0b"></div><div class="cost-val">25-40%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">OEM Parts</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="30" style="background:#ef4444"></div><div class="cost-val">20-30%</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:130px">Brand Exhaust</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="35" style="background:#ef4444"></div><div class="cost-val">25-35%</div></div></div>
+        <div class="bp-tags" style="margin-top:12px">
+          <span class="bp-tag" style="background:rgba(16,185,129,0.15);color:#10b981;border-color:rgba(16,185,129,0.2)">Green = High margin</span>
+          <span class="bp-tag" style="background:rgba(59,130,246,0.15);color:#3b82f6;border-color:rgba(59,130,246,0.2)">Blue = Medium</span>
+          <span class="bp-tag" style="background:rgba(239,68,68,0.15);color:#ef4444;border-color:rgba(239,68,68,0.2)">Red = Thin margin</span>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Pricing Matrix -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4B2;</div>
+        <div class="acc-title">Markup Matrix</div>
+        <span class="acc-badge" style="background:#3b82f6">By cost tier</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#10b981">RM0.50—5 cost</strong> &#x2192; 200-400% markup (sell RM2 item at RM8)</p>
+        <p><strong style="color:#10b981">RM5—20 cost</strong> &#x2192; 100-200% markup (sell RM8 item at RM18)</p>
+        <p><strong style="color:#3b82f6">RM20—50 cost</strong> &#x2192; 60-100% markup (sell RM30 item at RM55)</p>
+        <p><strong style="color:#f59e0b">RM50—150 cost</strong> &#x2192; 40-60% markup (sell RM80 item at RM120)</p>
+        <p><strong style="color:#ef4444">RM150—500 cost</strong> &#x2192; 25-40% markup (sell RM250 at RM340)</p>
+        <p><strong style="color:#ef4444">RM500+ cost</strong> &#x2192; 15-25% markup</p>
+        <p style="margin-top:8px;color:#06b6d4;font-size:11px">Rule: cheaper items = higher % markup, expensive items = lower % but bigger RM profit per sale</p>
+      </div></div>
+    </div>
+
+    <!-- Loss Leaders -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F3AF;</div>
+        <div class="acc-title">Loss Leader Items</div>
+        <span class="acc-badge" style="background:#ef4444">Traffic drivers</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#f59e0b;font-weight:600;margin-bottom:8px">Sell cheap to get customers in, upsell the rest</p>
+        <p>&#x1F7E2; <strong style="color:#f1f5f9">Engine oil change</strong> — sell branded oil near cost, free labour. Customer sees worn brake pads, buys accessories</p>
+        <p>&#x1F7E2; <strong style="color:#f1f5f9">Spark plugs</strong> — cost RM2-5, sell RM5-8. Every bike needs them regularly</p>
+        <p>&#x1F7E2; <strong style="color:#f1f5f9">Basic bulbs</strong> — cost RM1-3, sell RM3-5. Quick job = walk-in traffic</p>
+        <p>&#x1F7E1; <strong style="color:#f1f5f9">Air filters</strong> — cost RM3-8, sell RM8-15. Pairs with oil changes</p>
+        <p>&#x1F7E1; <strong style="color:#f1f5f9">Cheap brake pads</strong> — cost RM5-10, sell RM12-18. Builds trust</p>
+        <p>&#x1F7E1; <strong style="color:#f1f5f9">Chain lube</strong> — cost RM5-8, sell RM10-15. Brings customers back monthly</p>
+        <p style="margin-top:10px;padding:8px 12px;background:rgba(16,185,129,0.08);border-radius:8px;border:1px solid rgba(16,185,129,0.15);color:#10b981;font-size:11px">&#x1F4A1; A RM15 oil change customer typically leaves spending RM50-100+ on filters, brake pads, chain lube & accessories</p>
+      </div></div>
+    </div>
+
+    <!-- Promo Loss Leaders -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F381;</div>
+        <div class="acc-title">Promo Freebies</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">Free phone mount</strong> — cost RM2-3, give free with purchase &gt; RM50</p>
+        <p><strong style="color:#f1f5f9">Branded keychains</strong> — near-zero cost, builds loyalty</p>
+        <p><strong style="color:#f1f5f9">Stickers pack</strong> — cost RM0.50, perceived value RM5+</p>
+        <p><strong style="color:#f1f5f9">Free installation</strong> — for parts bought in-store (labour = your time only)</p>
+      </div></div>
+    </div>
+
+    <!-- Sourcing - China -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F1E8;&#x1F1F3;</div>
+        <div class="acc-title">Source: China (Best Margin)</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">1688.com</strong> — Factory-direct, cheapest prices. Need agent or Mandarin. MOQ 50-500 pcs</p>
+        <p><strong style="color:#f1f5f9">Alibaba.com</strong> — English interface, Trade Assurance. MOQ 10-100 pcs. Good for beginners</p>
+        <p><strong style="color:#f1f5f9">Made-in-China.com</strong> — LED, mirrors, accessories. Competitive factory pricing</p>
+        <p><strong style="color:#f1f5f9">Guangzhou Markets</strong> — 4 wholesale hubs in Baiyun/Zengcheng. Hands-on quality check. Negotiate 20-40% off</p>
+        <p><strong style="color:#f1f5f9">Yiwu Market</strong> — World's biggest small goods market. Best for accessories, LED, stickers. Low MOQ</p>
+        <p style="margin-top:8px;color:#94a3b8;font-size:11px">Sea freight to MY: ~USD 150-400 per shipment</p>
+      </div></div>
+    </div>
+
+    <!-- Sourcing - Local MY -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F1F2;&#x1F1FE;</div>
+        <div class="acc-title">Source: Local Malaysia</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">BS Motorcycle Parts</strong> — Genuine parts, wide catalog (Selangor)</p>
+        <p><strong style="color:#f1f5f9">AFTA Motor / Tobaki Racing</strong> — 4,000+ SKUs, replacement & racing parts</p>
+        <p><strong style="color:#f1f5f9">Seng Cycle World</strong> — One-stop online parts (KL)</p>
+        <p><strong style="color:#f1f5f9">Jalan Sungai Besi area, KL</strong> — Cluster of motorcycle wholesalers (57100 KL)</p>
+        <p style="margin-top:8px;color:#94a3b8;font-size:11px">Also benchmark on Shopee MY & Lazada for competitive pricing</p>
+      </div></div>
+    </div>
+
+    <!-- Sourcing - Thailand -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F1F9;&#x1F1ED;</div>
+        <div class="acc-title">Source: Thailand</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>SEA's motorcycle manufacturing hub. Competitive wholesale for Honda & Yamaha compatible parts via Global Trade Plaza and Thai distributors.</p>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
 <div class="legend">
   <div class="legend-title">Legend</div>
   <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Investor (Shareholder)</div>
@@ -839,7 +983,8 @@
   let activePanel = null;
   function openPanel(id) {
     closePanel();
-    const panel = id === 'bp' ? document.getElementById('bpPanel') : document.getElementById('roadPanel');
+    const panels = {bp: 'bpPanel', road: 'roadPanel', market: 'marketPanel'};
+    const panel = document.getElementById(panels[id]);
     document.getElementById('bpOverlay').classList.add('open');
     panel.classList.add('open');
     activePanel = panel;
