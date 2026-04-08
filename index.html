@@ -280,6 +280,102 @@
     fill: #64748b;
     font-family: 'Segoe UI', system-ui, sans-serif;
   }
+
+  /* ========== MOBILE RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    /* Header: stack vertically, buttons scroll horizontally */
+    .header {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 12px 14px;
+      gap: 10px;
+    }
+    .header h1 { font-size: 15px; }
+    .header .subtitle { font-size: 10px; }
+    .header > div:last-child {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    .header > div:last-child::-webkit-scrollbar { display: none; }
+    .bp-btn {
+      padding: 7px 12px;
+      font-size: 11px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Panels: full width on mobile */
+    .bp-panel {
+      width: 100vw;
+      max-width: 100vw;
+      right: -100vw;
+    }
+    .bp-header { padding: 14px 16px; }
+    .bp-header h2 { font-size: 15px; }
+    .bp-content { padding: 12px; }
+
+    /* Accordion: reduce inner padding */
+    .acc-head { padding: 12px 12px; gap: 8px; }
+    .acc-icon { font-size: 18px; width: 24px; }
+    .acc-title { font-size: 13px; }
+    .acc-inner { padding: 4px 12px 14px 12px; }
+    .acc-badge { font-size: 9px; padding: 2px 6px; }
+
+    /* Hero card */
+    .bp-hero { padding: 16px 14px; }
+    .bp-hero-icon { font-size: 28px; }
+    .bp-hero h3 { font-size: 14px; }
+
+    /* Cost bars: label narrower */
+    .cost-label { width: 80px !important; font-size: 10px; }
+    .cost-val { font-size: 9px; right: 4px; }
+
+    /* Role grid: single column on very small screens */
+    .role-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .role-card { padding: 10px 8px; }
+    .role-emoji { font-size: 20px; }
+    .role-name { font-size: 12px; }
+    .role-desc { font-size: 9px; }
+
+    /* Legend: horizontal compact bar at bottom */
+    .legend {
+      left: 12px; right: 12px; bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      font-size: 10px;
+    }
+    .legend-title { margin-bottom: 0; font-size: 9px; width: 100%; }
+    .legend-dot { width: 8px; height: 8px; }
+
+    /* Zoom controls */
+    .zoom-controls { bottom: 70px; right: 12px; }
+    .zoom-btn { width: 36px; height: 36px; font-size: 16px; }
+
+    /* Tooltip: bottom sheet style on mobile */
+    .tooltip {
+      left: 12px !important; right: 12px;
+      bottom: 80px; top: auto !important;
+      max-width: none;
+      border-radius: 12px;
+    }
+
+    /* Timeline */
+    .tl { padding-left: 16px; }
+    .tl-dot { left: -14px; width: 8px; height: 8px; }
+  }
+
+  @media (max-width: 380px) {
+    .role-grid { grid-template-columns: 1fr; }
+    .cost-label { width: 65px !important; }
+    .bp-btn { padding: 6px 10px; font-size: 10px; }
+  }
 </style>
 </head>
 <body>
