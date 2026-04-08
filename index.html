@@ -293,6 +293,8 @@
     <button class="bp-btn" onclick="openPanel('bp')">Business Plan</button>
     <button class="bp-btn" style="background:linear-gradient(135deg,#f59e0b,#ef4444)" onclick="openPanel('road')">Road to RM 50K Sales</button>
     <button class="bp-btn" style="background:linear-gradient(135deg,#10b981,#06b6d4)" onclick="openPanel('market')">Market Data</button>
+    <button class="bp-btn" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)" onclick="openPanel('location')">Location</button>
+    <button class="bp-btn" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)" onclick="openPanel('audience')">Audience</button>
   </div>
 </div>
 
@@ -717,6 +719,310 @@
   </div>
 </div>
 
+<!-- ========== LOCATION ANALYSIS PANEL ========== -->
+<div class="bp-panel" id="locationPanel">
+  <div class="bp-header">
+    <h2>Location Analysis</h2>
+    <button class="bp-close" onclick="closePanel()">&times;</button>
+  </div>
+  <div class="bp-content">
+
+    <div class="bp-hero" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(236,72,153,0.08));border-color:rgba(139,92,246,0.25)">
+      <div class="bp-hero-icon">&#x1F4CD;</div>
+      <h3>Aspirasi Hillpark, Puncak Alam</h3>
+      <p>Kuala Selangor District, Selangor — Young, fast-growing township</p>
+    </div>
+
+    <!-- Verdict -->
+    <div style="padding:14px 16px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;margin-bottom:12px;text-align:center">
+      <div style="font-size:20px;font-weight:700;color:#10b981">STRONG Location</div>
+      <div style="font-size:11px;color:#94a3b8;margin-top:4px">High motorcycle dependency + low competition + massive growth ahead</div>
+    </div>
+
+    <!-- Area Profile -->
+    <div class="acc open" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F3D8;</div>
+        <div class="acc-title">Area Profile</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">Township:</strong> Bandar Hillpark by MKH Berhad — 558 acres, ~5,000 homes</p>
+        <p><strong style="color:#f1f5f9">Type:</strong> Mixed residential-commercial, still developing</p>
+        <p><strong style="color:#f1f5f9">Population:</strong> ~50,000 in Puncak Alam (master-planned for 500,000!)</p>
+        <p><strong style="color:#f1f5f9">Housing:</strong> Double-storey terrace, median RM570K — young M40 families</p>
+        <p><strong style="color:#f1f5f9">Commercial rent:</strong> RM1,800 - RM5,800/month for shoplots at Hillpark</p>
+        <p style="margin-top:8px;color:#8b5cf6;font-size:11px">Currently at ~10% of planned capacity — massive upside</p>
+      </div></div>
+    </div>
+
+    <!-- Catchment Radius -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4CD;</div>
+        <div class="acc-title">10-15 Min Catchment</div>
+        <span class="acc-badge" style="background:#8b5cf6">7 areas</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#60a5fa">UiTM Puncak Alam</strong> — 40,000 students/staff (adjacent!)</p>
+        <p><strong style="color:#f1f5f9">Eco Grandeur</strong> — Premium EcoWorld township (nearby)</p>
+        <p><strong style="color:#f1f5f9">Saujana Utama</strong> — Established residential (5-10 min)</p>
+        <p><strong style="color:#f1f5f9">Alam Suria</strong> — Mixed township + ECRL station (5-10 min)</p>
+        <p><strong style="color:#f59e0b">Alam Perdana Industrial</strong> — 95-acre factory zone (10 min)</p>
+        <p><strong style="color:#f59e0b">Semanja Business Park</strong> — 103-acre logistics/factory (10 min)</p>
+        <p><strong style="color:#f1f5f9">Ijok</strong> — Semi-rural town (10-15 min)</p>
+        <p><strong style="color:#f1f5f9">Kuala Selangor</strong> — District capital (20 min)</p>
+      </div></div>
+    </div>
+
+    <!-- Highway Access -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F6E3;</div>
+        <div class="acc-title">Highway Access</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p><strong style="color:#f1f5f9">LATAR (E25)</strong> — Direct interchange, connects to Rawang</p>
+        <p><strong style="color:#f1f5f9">Guthrie Corridor (GCE)</strong> — Shah Alam to Rawang via LATAR</p>
+        <p><strong style="color:#f1f5f9">West Coast Expressway</strong> — Via interchange</p>
+        <p style="margin-top:6px;color:#94a3b8;font-size:11px">Drive times: KL 30 min | Shah Alam 20 min | PJ 25 min | Klang 15 min</p>
+        <p style="margin-top:6px;padding:8px 12px;background:rgba(245,158,11,0.08);border-radius:8px;border:1px solid rgba(245,158,11,0.15);color:#fbbf24;font-size:11px">&#x1F4A1; Heavy rush-hour congestion on LATAR (6-9am, 4:30-8pm) actually DRIVES motorcycle usage — riders avoid jams on bikes</p>
+      </div></div>
+    </div>
+
+    <!-- Competition -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x2694;</div>
+        <div class="acc-title">Competition</div>
+        <span class="acc-badge" style="background:#10b981">Low</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#10b981;font-weight:600;margin-bottom:8px">Area is UNDERSERVED for motorcycle parts</p>
+        <p><strong style="color:#f1f5f9">PA Motoworld</strong> — Kawasaki/Suzuki dealer (sells bikes, not focused on parts)</p>
+        <p><strong style="color:#f1f5f9">A.N.H Motorsport</strong> — Parts & accessories in Alam Suria (not Hillpark)</p>
+        <p><strong style="color:#f1f5f9">Leong Seng Motor</strong> — Auto parts (car-focused)</p>
+        <p style="margin-top:8px;color:#94a3b8;font-size:11px">No dominant motorcycle spare parts specialist in Hillpark area. Mature towns like Rawang or Shah Alam have dozens per strip — Puncak Alam has very few.</p>
+      </div></div>
+    </div>
+
+    <!-- Growth Catalysts -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F680;</div>
+        <div class="acc-title">Growth Catalysts</div>
+        <span class="acc-badge" style="background:#ec4899">2025-2027</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>&#x1F686; <strong style="color:#f1f5f9">ECRL Station</strong> — at Alam Suria, completion end 2026/early 2027. 300K projected passengers</p>
+        <p>&#x1F3ED; <strong style="color:#f1f5f9">Industrial Expansion</strong> — Alam Perdana, Semanja Phase 2-3, Puncak Alam Business Park</p>
+        <p>&#x1F3E0; <strong style="color:#f1f5f9">New Housing</strong> — Rumah Selangorku affordable housing projects launching</p>
+        <p>&#x1F3E5; <strong style="color:#f1f5f9">UiTM Hospital</strong> — 800-bed facility planned adjacent to Hillpark</p>
+        <p>&#x1F6D2; <strong style="color:#f1f5f9">Commercial</strong> — Galaxy Avenue, Hillpark Avenue, new hypermarket site (6 acres)</p>
+        <p style="margin-top:8px;padding:8px 12px;background:rgba(139,92,246,0.08);border-radius:8px;border:1px solid rgba(139,92,246,0.15);color:#a78bfa;font-size:11px">&#x1F4A1; Opening NOW means establishing before the population wave hits — first mover advantage</p>
+      </div></div>
+    </div>
+
+    <!-- Strengths vs Risks -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x2696;</div>
+        <div class="acc-title">Strengths vs Risks</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#10b981;font-weight:600">Strengths:</p>
+        <p>&#x2705; High motorcycle dependency (B40-M40 + students + factory workers)</p>
+        <p>&#x2705; Limited competition — underserved area</p>
+        <p>&#x2705; UiTM = 40,000 captive customers next door</p>
+        <p>&#x2705; Affordable commercial rent (RM1.8K-5.8K/month)</p>
+        <p>&#x2705; Massive growth trajectory (10% → 100% capacity)</p>
+        <p style="color:#ef4444;font-weight:600;margin-top:10px">Risks:</p>
+        <p>&#x26A0; Township still developing — foot traffic may be lower initially</p>
+        <p>&#x26A0; Some commercial shoplots have high vacancy rates</p>
+        <p>&#x26A0; ECRL (2027) may slightly reduce motorcycle dependency long-term</p>
+        <p>&#x26A0; Need to actively build brand recognition in new area</p>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== AUDIENCE ANALYSIS PANEL ========== -->
+<div class="bp-panel" id="audiencePanel">
+  <div class="bp-header">
+    <h2>Audience Analysis</h2>
+    <button class="bp-close" onclick="closePanel()">&times;</button>
+  </div>
+  <div class="bp-content">
+
+    <div class="bp-hero" style="background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(59,130,246,0.08));border-color:rgba(6,182,212,0.25)">
+      <div class="bp-hero-icon">&#x1F465;</div>
+      <h3>5 Key Audience Segments</h3>
+      <p>Who rides in Puncak Alam — and how to sell to each one</p>
+    </div>
+
+    <!-- Segment 1: UiTM Students -->
+    <div class="acc open" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F393;</div>
+        <div class="acc-title">UiTM Students</div>
+        <span class="acc-badge" style="background:#3b82f6">~40,000</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#60a5fa;font-weight:600;margin-bottom:6px">THE biggest audience — right next door</p>
+        <p><strong style="color:#f1f5f9">Profile:</strong> Age 18-25, Malay majority, tight budget, ride kapcai (Honda Wave, Yamaha LC135, Y15ZR)</p>
+        <p><strong style="color:#f1f5f9">Needs:</strong> Cheap replacement parts, basic maintenance items, affordable accessories to customize bikes</p>
+        <p><strong style="color:#f1f5f9">Spending:</strong> RM20-80 per visit, frequent small purchases</p>
+        <p style="color:#10b981;font-weight:600;margin-top:8px">How to tackle:</p>
+        <p>&#x2192; <strong>Student discount</strong> — 5-10% off with student ID. Creates loyalty + word of mouth</p>
+        <p>&#x2192; <strong>Budget bundles</strong> — "Service Kit RM25" (oil + filter + spark plug)</p>
+        <p>&#x2192; <strong>TikTok & Instagram</strong> — students live on social media. Post bike mod tutorials, part reviews</p>
+        <p>&#x2192; <strong>WhatsApp group</strong> — "UiTM Bikers" group for deals & stock alerts</p>
+        <p>&#x2192; <strong>Semester-start promos</strong> — big push during registration week (Sep & Feb)</p>
+        <p>&#x2192; <strong>Installment for accessories</strong> — RM50+ items on 2-3 month payment via WhatsApp trust</p>
+      </div></div>
+    </div>
+
+    <!-- Segment 2: Daily Commuters -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F6F5;</div>
+        <div class="acc-title">Daily Commuters</div>
+        <span class="acc-badge" style="background:#f59e0b">High volume</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#fbbf24;font-weight:600;margin-bottom:6px">Bread-and-butter repeat customers</p>
+        <p><strong style="color:#f1f5f9">Profile:</strong> Age 25-45, M40 families in Hillpark/Saujana Utama/Eco Grandeur, ride daily to KL/Shah Alam via LATAR</p>
+        <p><strong style="color:#f1f5f9">Bikes:</strong> Honda RS150, Yamaha NVX, Honda ADV, Y15ZR — mid-range commuters</p>
+        <p><strong style="color:#f1f5f9">Needs:</strong> Reliability-focused — brake pads, tyres, chains, oil changes, rain gear</p>
+        <p><strong style="color:#f1f5f9">Spending:</strong> RM50-200 per visit, every 1-3 months</p>
+        <p style="color:#10b981;font-weight:600;margin-top:8px">How to tackle:</p>
+        <p>&#x2192; <strong>Loyalty card</strong> — "5th oil change free" punch card</p>
+        <p>&#x2192; <strong>Early morning / evening hours</strong> — open by 8am (catch before work) & stay till 9pm</p>
+        <p>&#x2192; <strong>Quick service</strong> — oil change in 15 min, brake pads in 20 min. Speed = loyalty</p>
+        <p>&#x2192; <strong>WhatsApp reminders</strong> — "Hi bro, your next oil change is due this week"</p>
+        <p>&#x2192; <strong>Rain season promos</strong> — rain coat + visor spray bundle during monsoon (Oct-Feb)</p>
+      </div></div>
+    </div>
+
+    <!-- Segment 3: Factory / Industrial Workers -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F3ED;</div>
+        <div class="acc-title">Factory Workers</div>
+        <span class="acc-badge" style="background:#ef4444">Growing fast</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#ef4444;font-weight:600;margin-bottom:6px">Industrial parks expanding — this segment will grow 2-3x</p>
+        <p><strong style="color:#f1f5f9">Profile:</strong> Age 20-40, B40 workers at Alam Perdana Industrial, Semanja Business Park. Motorcycle is their ONLY transport</p>
+        <p><strong style="color:#f1f5f9">Bikes:</strong> Honda Wave, EX5, Yamaha 135LC — workhorse kapcai, high mileage</p>
+        <p><strong style="color:#f1f5f9">Needs:</strong> Frequent wear-and-tear parts (brake shoes, chain, sprocket, bulbs), engine oil, cheap tyres</p>
+        <p><strong style="color:#f1f5f9">Spending:</strong> RM30-100 per visit, very frequent (every 2-4 weeks for heavy riders)</p>
+        <p style="color:#10b981;font-weight:600;margin-top:8px">How to tackle:</p>
+        <p>&#x2192; <strong>Cheapest price guarantee</strong> on basic parts — they compare every ringgit</p>
+        <p>&#x2192; <strong>Bulk oil deals</strong> — "Buy 4L get RM5 off" for monthly oil change</p>
+        <p>&#x2192; <strong>Payday promos</strong> — run deals on 25th-30th of each month</p>
+        <p>&#x2192; <strong>B2B: befriend the kilang</strong> — offer to be the "recommended shop" for factory staff. Put flyers in factory canteens</p>
+        <p>&#x2192; <strong>Credit book</strong> — trusted regulars can "hutang" and settle on payday (risky but builds loyalty)</p>
+      </div></div>
+    </div>
+
+    <!-- Segment 4: Enthusiasts / Modders -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F3CE;</div>
+        <div class="acc-title">Enthusiasts & Modders</div>
+        <span class="acc-badge" style="background:#8b5cf6">High spend</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#a78bfa;font-weight:600;margin-bottom:6px">Smaller group but HIGHEST spend per customer</p>
+        <p><strong style="color:#f1f5f9">Profile:</strong> Age 18-35, passionate riders, active in FB groups & TikTok bike community. Often students or young workers</p>
+        <p><strong style="color:#f1f5f9">Bikes:</strong> Modified Y15ZR, RS150, Ninja 250, KTM Duke — want to stand out</p>
+        <p><strong style="color:#f1f5f9">Needs:</strong> Performance exhaust, racing sprockets, LED lights, carbon fiber parts, stickers, cosmetic mods</p>
+        <p><strong style="color:#f1f5f9">Spending:</strong> RM100-500+ per visit, willing to pay for cool factor</p>
+        <p style="color:#10b981;font-weight:600;margin-top:8px">How to tackle:</p>
+        <p>&#x2192; <strong>Showcase wall</strong> — display modded parts in-store, let them touch/feel</p>
+        <p>&#x2192; <strong>TikTok "install" videos</strong> — show before/after of exhaust, LED, decal installs</p>
+        <p>&#x2192; <strong>Customer bike gallery</strong> — "Wall of Fame" photos of modded bikes (customers love this)</p>
+        <p>&#x2192; <strong>Group rides</strong> — sponsor/organize monthly Puncak Alam riders meetup</p>
+        <p>&#x2192; <strong>Pre-order rare parts</strong> — take orders for specialty items, charge deposit</p>
+      </div></div>
+    </div>
+
+    <!-- Segment 5: Nearby Workshops (B2B) -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F527;</div>
+        <div class="acc-title">Workshop Owners (B2B)</div>
+        <span class="acc-badge" style="background:#64748b">Bulk orders</span>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="color:#94a3b8;font-weight:600;margin-bottom:6px">Lower margin but consistent high-volume orders</p>
+        <p><strong style="color:#f1f5f9">Profile:</strong> Small kedai motor in Puncak Alam, Ijok, Saujana Utama. 3-5 nearby workshops as regulars</p>
+        <p><strong style="color:#f1f5f9">Needs:</strong> Bulk brake pads, oil, filters, chains, sprockets — restocking fast-moving items</p>
+        <p><strong style="color:#f1f5f9">Spending:</strong> RM300-1,000 per order, 2-3x per week</p>
+        <p style="color:#10b981;font-weight:600;margin-top:8px">How to tackle:</p>
+        <p>&#x2192; <strong>Trade pricing</strong> — 10-15% discount for registered workshop accounts</p>
+        <p>&#x2192; <strong>Free delivery</strong> — deliver within 10km for orders above RM200</p>
+        <p>&#x2192; <strong>Credit terms</strong> — net 14 days for trusted workshops</p>
+        <p>&#x2192; <strong>WhatsApp catalogue</strong> — send weekly stock list + new arrivals</p>
+        <p>&#x2192; <strong>Visit them personally</strong> — go workshop to workshop, introduce yourself, leave name card + price list</p>
+      </div></div>
+    </div>
+
+    <!-- Priority Matrix -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4CA;</div>
+        <div class="acc-title">Priority Matrix</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <p style="margin-bottom:10px;color:#94a3b8;font-size:11px">Where to focus effort vs expected return</p>
+        <div class="cost-row"><div class="cost-label" style="width:120px">UiTM Students</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="95" style="background:#3b82f6"></div><div class="cost-val">&#x2B50; #1 Priority</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:120px">Commuters</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="85" style="background:#f59e0b"></div><div class="cost-val">&#x2B50; #2 Priority</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:120px">Factory Workers</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="75" style="background:#ef4444"></div><div class="cost-val">#3 Growing</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:120px">Enthusiasts</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="60" style="background:#8b5cf6"></div><div class="cost-val">#4 High margin</div></div></div>
+        <div class="cost-row"><div class="cost-label" style="width:120px">Workshops B2B</div><div class="cost-bar-wrap"><div class="cost-bar" data-w="50" style="background:#64748b"></div><div class="cost-val">#5 Volume</div></div></div>
+        <div style="margin-top:14px;padding:10px 14px;background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.2);border-radius:10px;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:#06b6d4">Combined TAM in Catchment</div>
+          <div style="font-size:10px;color:#94a3b8;margin-top:2px">~50,000 residents + 40,000 UiTM + growing industrial workers</div>
+          <div style="font-size:20px;font-weight:700;color:#f1f5f9;margin-top:4px">~100,000+ potential riders</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Channel Strategy per Segment -->
+    <div class="acc" onclick="toggleAcc(this)">
+      <div class="acc-head">
+        <div class="acc-icon">&#x1F4E2;</div>
+        <div class="acc-title">How to Reach Each Segment</div>
+        <div class="acc-arrow">&#x25BC;</div>
+      </div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="role-grid">
+          <div class="role-card"><div class="role-emoji">&#x1F393;</div><div class="role-name">Students</div><div class="role-desc">TikTok, Instagram, WhatsApp groups, word of mouth</div></div>
+          <div class="role-card"><div class="role-emoji">&#x1F6F5;</div><div class="role-name">Commuters</div><div class="role-desc">Shop signage, WhatsApp reminders, loyalty card</div></div>
+          <div class="role-card"><div class="role-emoji">&#x1F3ED;</div><div class="role-name">Workers</div><div class="role-desc">Factory flyers, canteen ads, payday promos</div></div>
+          <div class="role-card"><div class="role-emoji">&#x1F3CE;</div><div class="role-name">Enthusiasts</div><div class="role-desc">TikTok mods, FB groups, group rides</div></div>
+        </div>
+        <p style="margin-top:10px;padding:8px 12px;background:rgba(59,130,246,0.08);border-radius:8px;border:1px solid rgba(59,130,246,0.15);color:#60a5fa;font-size:11px">&#x1F4A1; #1 channel for Puncak Alam: <strong>WhatsApp</strong> — everyone uses it. Build a broadcast list from day 1.</p>
+      </div></div>
+    </div>
+
+  </div>
+</div>
+
 <div class="legend">
   <div class="legend-title">Legend</div>
   <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Investor (Shareholder)</div>
@@ -983,7 +1289,7 @@
   let activePanel = null;
   function openPanel(id) {
     closePanel();
-    const panels = {bp: 'bpPanel', road: 'roadPanel', market: 'marketPanel'};
+    const panels = {bp: 'bpPanel', road: 'roadPanel', market: 'marketPanel', location: 'locationPanel', audience: 'audiencePanel'};
     const panel = document.getElementById(panels[id]);
     document.getElementById('bpOverlay').classList.add('open');
     panel.classList.add('open');
