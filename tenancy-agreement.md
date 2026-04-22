@@ -49,7 +49,7 @@ ______________________________________
 
 ## 2. TENANCY TERM
 
-2.1 The tenancy shall commence on **1st ______________, 2026** and shall expire on **31st ______________, 202__**, being a period of **______ (__)** year(s) (hereinafter referred to as **"the Tenancy Period"**).
+2.1 The tenancy shall commence on **1st January 2026** and shall expire on **31st December 2026**, being a period of **one (1)** year (hereinafter referred to as **"the Tenancy Period"**).
 
 2.2 Upon expiry of the Tenancy Period, this Agreement may be renewed by mutual written agreement between the Landlord and the Tenant upon such terms and conditions as may be agreed.
 
