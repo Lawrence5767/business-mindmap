@@ -2,7 +2,7 @@
 
 ---
 
-**THIS TENANCY AGREEMENT** is entered into on the **1st day of January 2026**.
+**THIS TENANCY AGREEMENT** is entered into on the ______ day of ______________ 2026.
 
 ---
 
@@ -11,8 +11,8 @@
 **LANDLORD:**
 
 **Ooi Yu Kuan**
-NRIC No.: 670919-02-5899
-Address: Aspirasi Hillpark
+NRIC No.: ______________________
+Address: ______________________
          ______________________
          ______________________
 
@@ -23,7 +23,7 @@ Address: Aspirasi Hillpark
 **TENANT:**
 
 **OYK Enterprise**
-Registration No.: ABC12345
+Registration No.: ______________________
 Registered Address: ______________________
                     ______________________
                     ______________________
@@ -38,7 +38,7 @@ Represented by: Ooi Yu Kuan (Director/Sole Proprietor)
 The Landlord hereby agrees to let and the Tenant agrees to take on tenancy the following property:
 
 **Property Address:**
-Aspirasi Hillpark
+______________________________________
 ______________________________________
 ______________________________________
 (hereinafter referred to as **"the Premises"**)
@@ -57,7 +57,7 @@ ______________________________________
 
 ## 3. RENTAL
 
-3.1 The monthly rental for the Premises shall be **Ringgit Malaysia Two Thousand (RM 2,000.00)** per month (hereinafter referred to as **"the Rental"**).
+3.1 The monthly rental for the Premises shall be **Ringgit Malaysia ______________ (RM ______________)** per month (hereinafter referred to as **"the Rental"**).
 
 3.2 The Rental shall be paid by the Tenant to the Landlord on or before the **______ day** of each calendar month throughout the Tenancy Period.
 
@@ -72,7 +72,7 @@ ______________________________________
 
 ## 4. SECURITY DEPOSIT
 
-4.1 Upon execution of this Agreement, the Tenant shall pay to the Landlord a refundable security deposit equivalent to **two (2) months' rental**, amounting to **Ringgit Malaysia Four Thousand (RM 4,000.00)**.
+4.1 Upon execution of this Agreement, the Tenant shall pay to the Landlord a refundable security deposit equivalent to **two (2) months' rental**, amounting to **Ringgit Malaysia ______________ (RM ______________)**.
 
 4.2 The security deposit shall be held by the Landlord as security for the due performance and observance of the terms and conditions of this Agreement.
 
@@ -210,9 +210,9 @@ Signature: _________________________
 
 Name: **OOI YU KUAN**
 
-NRIC No.: 670919-02-5899
+NRIC No.: ______________________
 
-Date: 1 January 2026
+Date: ______________________
 
 ---
 
@@ -226,7 +226,7 @@ Name: **OOI YU KUAN**
 
 Designation: Director / Sole Proprietor
 
-Date: 1 January 2026
+Date: ______________________
 
 ---
 
